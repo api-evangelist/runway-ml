@@ -1,0 +1,155 @@
+aid: runway-ml
+name: Runway
+description: >-
+  Runway is a generative AI research company that builds creative tools for
+  video, image, and audio production. Its flagship Gen-4 family of models
+  powers text-to-video, image-to-video, video-to-video, and text-to-image
+  generation, alongside text-to-speech and avatar capabilities. Runway
+  serves filmmakers, advertisers, designers, and developers, monetizing
+  through consumer creative subscriptions and a developer API with
+  self-serve and enterprise tiers. The Runway API lets teams embed
+  generative media directly into their applications and agent workflows.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Artificial Intelligence
+  - Generative AI
+  - Video
+  - Image
+  - Text To Video
+  - Image To Video
+  - Text To Image
+  - Text To Speech
+  - Avatars
+  - Creative Tools
+  - Media
+url: https://raw.githubusercontent.com/api-evangelist/runway-ml/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: runway-ml:runway-api
+    name: Runway API
+    description: >-
+      The Runway API exposes Gen-4 generative video and image models for
+      programmatic creation of media assets. It uses an async task pattern
+      where clients submit generation jobs and poll for completion, with
+      official Node.js and Python SDKs that wrap the polling lifecycle.
+    humanURL: https://docs.dev.runwayml.com/
+    baseURL: https://api.dev.runwayml.com/v1
+    tags:
+      - Generative AI
+      - Video
+      - Image
+      - Text To Video
+      - Image To Video
+      - Text To Image
+      - Text To Speech
+    properties:
+      - type: Documentation
+        url: https://docs.dev.runwayml.com/
+      - type: GettingStarted
+        url: https://docs.dev.runwayml.com/guides/using-the-api
+      - type: SignUp
+        url: https://dev.runwayml.com/login
+      - type: SDK
+        url: https://www.npmjs.com/package/@runwayml/sdk
+      - type: SDK
+        url: https://pypi.org/project/runwayml/
+      - type: GitHubRepository
+        url: https://github.com/runwayml/skills
+      - type: GitHubRepository
+        url: https://github.com/runwayml/avatars-sdk-react
+      - type: GitHubRepository
+        url: https://github.com/runwayml/figma-plugin
+      - type: Pricing
+        url: https://dev.runwayml.com/
+      - type: Authentication
+        url: https://docs.dev.runwayml.com/guides/using-the-api
+    features:
+      - name: Image to Video
+        description: >-
+          Animate a still image with optional prompt text using the Gen-4.5
+          model.
+      - name: Text to Video
+        description: >-
+          Generate video clips directly from a text prompt.
+      - name: Video to Video (Gen-4 Aleph)
+        description: >-
+          Transform existing video footage using a prompt and style
+          conditioning.
+      - name: Text to Image (Gen-4 Image)
+        description: >-
+          Create images from text prompts with configurable aspect ratios.
+      - name: Text to Speech
+        description: >-
+          Generate spoken audio from text for narration and voiceover.
+      - name: Avatars SDK
+        description: >-
+          React SDK for embedding Runway-generated talking avatars into web
+          apps.
+      - name: Async Task Pattern
+        description: >-
+          Submit a generation, receive a task ID, and poll until the asset
+          is ready (with helpers like waitForTaskOutput()).
+      - name: Enterprise Limits
+        description: >-
+          Higher concurrency and throughput available via enterprise plans
+          on the developer portal.
+    useCases:
+      - name: Marketing Asset Generation
+        description: >-
+          Programmatically produce on-brand video and image ad creative at
+          scale.
+      - name: Personalized Video at Scale
+        description: >-
+          Generate individualized video content per user or campaign.
+      - name: Creative Tooling
+        description: >-
+          Embed video generation into design tools such as Figma plugins
+          and Chrome extensions.
+      - name: Pre-Visualization
+        description: >-
+          Quickly mock up storyboards and animatics for film and
+          advertising teams.
+      - name: Agentic Media Workflows
+        description: >-
+          Let AI agents create and edit media via the Runway Skills
+          repository.
+    integrations:
+      - name: Figma
+      - name: Chrome
+      - name: Claude Code
+      - name: Cursor
+      - name: Node.js
+      - name: Python
+      - name: React
+    authentication:
+      - type: Bearer Token
+        description: >-
+          Requests use the Authorization header with a Bearer token
+          (RUNWAYML_API_SECRET) generated in the developer portal.
+common:
+  - type: Website
+    url: https://runwayml.com
+  - type: Documentation
+    url: https://docs.dev.runwayml.com
+  - type: Blog
+    url: https://runwayml.com/blog
+  - type: GitHubOrganization
+    url: https://github.com/runwayml
+  - type: Pricing
+    url: https://runwayml.com/pricing
+  - type: TermsOfService
+    url: https://runwayml.com/terms-of-use
+  - type: PrivacyPolicy
+    url: https://runwayml.com/privacy-policy
+  - type: X
+    url: https://x.com/runwayml
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/runwayml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
