@@ -150,6 +150,8 @@ common:
     url: https://x.com/runwayml
   - type: LinkedIn
     url: https://www.linkedin.com/company/runwayml
+  - type: LLMsTxt
+    url: https://docs.dev.runwayml.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
