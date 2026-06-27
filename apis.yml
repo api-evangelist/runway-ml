@@ -49,11 +49,11 @@ apis:
     url: https://docs.dev.runwayml.com/
   - type: GettingStarted
     url: https://docs.dev.runwayml.com/guides/using-the-api
-  - type: SignUp
+  - type: Signup
     url: https://dev.runwayml.com/login
-  - type: SDK
+  - type: SDKs
     url: https://www.npmjs.com/package/@runwayml/sdk
-  - type: SDK
+  - type: SDKs
     url: https://pypi.org/project/runwayml/
   - type: GitHubRepository
     url: https://github.com/runwayml/skills
@@ -133,7 +133,7 @@ common:
   url: https://x.com/runwayml
 - type: LinkedIn
   url: https://www.linkedin.com/company/runwayml
-- type: LLMsTxt
+- type: LlmsText
   url: https://docs.dev.runwayml.com/llms.txt
 maintainers:
 - FN: Kin Lane
