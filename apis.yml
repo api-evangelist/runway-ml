@@ -115,6 +115,8 @@ apis:
     description: Requests use the Authorization header with a Bearer token (RUNWAYML_API_SECRET)
       generated in the developer portal.
 common:
+- type: AgenticAccess
+  url: agentic-access/runway-ml-agentic-access.yml
 - type: DomainSecurity
   url: security/runway-ml-domain-security.yml
 - type: Authentication
