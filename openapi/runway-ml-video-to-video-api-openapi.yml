@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: Runway ML Image To Video Video To Video API
+  description: 'Runway API for generative media. Provides endpoints for generating
+
+    video from images, video from video, and images from text, plus
+
+    task management for asynchronous generation jobs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Runway Developer Portal
+    url: https://docs.dev.runwayml.com/
+servers:
+- url: https://api.dev.runwayml.com/v1
+  description: Runway API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Video To Video
+paths:
+  /video_to_video:
+    post:
+      summary: Generate a video from an input video
+      operationId: createVideoToVideoTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - videoUri
+              - model
+              properties:
+                videoUri:
+                  type: string
+                promptText:
+                  type: string
+                model:
+                  type: string
+                seed:
+                  type: integer
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+      tags:
+      - Video To Video
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+          - PENDING
+          - RUNNING
+          - SUCCEEDED
+          - FAILED
+          - CANCELLED
+          - THROTTLED
+        createdAt:
+          type: string
+          format: date-time
+        output:
+          type: array
+          items:
+            type: string
+        failure:
+          type: string
+        failureCode:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Runway API key issued via the Runway Developer Portal, supplied as a bearer token in the Authorization header.

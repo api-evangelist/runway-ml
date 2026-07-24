@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: Runway ML Image To Video Text To Image API
+  description: 'Runway API for generative media. Provides endpoints for generating
+
+    video from images, video from video, and images from text, plus
+
+    task management for asynchronous generation jobs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Runway Developer Portal
+    url: https://docs.dev.runwayml.com/
+servers:
+- url: https://api.dev.runwayml.com/v1
+  description: Runway API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Text To Image
+paths:
+  /text_to_image:
+    post:
+      summary: Generate an image from text
+      operationId: createTextToImageTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - promptText
+              - model
+              properties:
+                promptText:
+                  type: string
+                model:
+                  type: string
+                ratio:
+                  type: string
+                seed:
+                  type: integer
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+      tags:
+      - Text To Image
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+          - PENDING
+          - RUNNING
+          - SUCCEEDED
+          - FAILED
+          - CANCELLED
+          - THROTTLED
+        createdAt:
+          type: string
+          format: date-time
+        output:
+          type: array
+          items:
+            type: string
+        failure:
+          type: string
+        failureCode:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Runway API key issued via the Runway Developer Portal, supplied as a bearer token in the Authorization header.
